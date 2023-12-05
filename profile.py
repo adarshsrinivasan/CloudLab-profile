@@ -20,6 +20,9 @@ BANDWIDTH = 10000000
 pc = portal.Context()
 
 pc.defineParameter(
+    "nodeCount", "Number of nodes in the experiment.", portal.ParameterType.INTEGER, 2,
+    longDescription="Number of nodes in the topology. It is recommended to keep it 2")
+pc.defineParameter(
     "redisAvailable", "Do you want redis running in your nodes?", portal.ParameterType.BOOLEAN, False,
     longDescription="Redis Server will be setup in all the nodes."
 )
