@@ -18,12 +18,17 @@ if [ "$1" == "True" ]; then
     rm -f /etc/redis/redis.conf
     echo "bind 127.0.0.1 ::1 $IP_PREFIX.$((node_num + 1))
 protected-mode no
+supervised=systemd
+dir /etc/redis/
 requirepass $PASSWORD" > /etc/redis/redis.conf
+
   else
     printf "Initializing redis-client \n"
     rm -f /etc/redis/redis.conf
     echo "bind 127.0.0.1 ::1 $IP_PREFIX.$((node_num + 1))
 protected-mode no
+supervised=systemd
+dir /etc/redis/
 replicaof $IP_PREFIX.1 $PORT
 masterauth $PASSWORD
 requirepass $PASSWORD" > /etc/redis/redis.conf
