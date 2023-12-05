@@ -1,5 +1,0 @@
-bind 127.0.0.1 ::1 10.20.1.2
-protected-mode no
-replicaof 10.20.1.1 6379
-masterauth password
-requirepass password
