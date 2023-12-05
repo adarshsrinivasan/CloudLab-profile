@@ -48,7 +48,7 @@ for i in range(params.nodeCount):
 
 for i, node in enumerate(nodes):
     # Install and execute a script that is contained in the repository.
-    node.addService(pg.Execute(shell="sh", command="/local/repository/start.sh {} {} > /local/repository/redis-{}-start.log 2>&1".format(params.redisAvailable, i, i)))
+    node.addService(pg.Execute(shell="sh", command="sudo /local/repository/start.sh {} {} > /local/repository/redis-{}-start.log 2>&1".format(params.redisAvailable, i, i)))
 
 # Print the RSpec to the enclosing page.
 pc.printRequestRSpec(request)
